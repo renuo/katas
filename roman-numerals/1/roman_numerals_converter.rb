@@ -9,7 +9,7 @@ class RomanNumeralsConverter
     NumberLetterPair.new(10, 'X'),
     NumberLetterPair.new(5, 'V'),
     NumberLetterPair.new(1, 'I')
-  ]
+  ].freeze
 
   def initialize(number)
     @buffer = ''
@@ -34,14 +34,14 @@ class RomanNumeralsConverter
   end
 
   def handle_4_subtract_case(pair, previous_pair)
-    return if @number - pair.number * 4 < 0
+    return if (@number - pair.number * 4).negative?
 
     @buffer += "#{pair.letter}#{previous_pair.letter}"
     @number -= 4 * pair.number
   end
 
   def handle_normal_case(pair)
-    while (@number - pair.number >= 0)
+    while @number - pair.number >= 0
       @buffer += pair.letter
       @number -= pair.number
     end
