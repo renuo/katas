@@ -3,7 +3,8 @@ class LetterGroup
     [''] + %w(I II III IV V VI VII VIII IX),
     [''] + %w(X XX XXX XL L LX LXX LXXX XC),
     [''] + %w(C CC CCC CD D DC DCC DCCC CM),
-    [''] + %w(M MM MMM)]
+    [''] + %w(M MM MMM)
+  ].freeze
 
   def initialize(number, letter_group_number)
     @number = number
