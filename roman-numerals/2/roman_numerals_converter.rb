@@ -1,39 +1,31 @@
 class RomanNumeralsConverter
-  LETTERS = [
-    %w(I II III IV V VI VII VIII IX),
-    %w(X XX XXX XL L LX LXX LXXX XC),
-    %w(C CC CCC CD D DC DCC DCCC CM),
-    %w(M MM MMM)]
+  LETTER_GROUPS = [
+    [''] + %w(I II III IV V VI VII VIII IX),
+    [''] + %w(X XX XXX XL L LX LXX LXXX XC),
+    [''] + %w(C CC CCC CD D DC DCC DCCC CM),
+    [''] + %w(M MM MMM)]
 
   def initialize(number)
     @number = number
   end
 
   def to_roman
-    thousands + hundreds + tens + ones
+    letters_for(1000) + letters_for(100) + letters_for(10) + letters_for(1)
   end
 
   private
 
-  def thousands
-    extract_letters(LETTERS[3], @number / 1000)
+  def letters_for(letter_group_number)
+    letter_group_index = letter_group_index(letter_group_number)
+    letters_index = letters_index(letter_group_number)
+    LETTER_GROUPS[letter_group_index][letters_index]
   end
 
-  def hundreds
-    extract_letters(LETTERS[2], @number % 1000 / 100)
+  def letters_index(letter_group_number)
+    @number / letter_group_number % 10
   end
 
-  def tens
-    extract_letters(LETTERS[1], @number % 100 / 10)
-  end
-
-  def ones
-    extract_letters(LETTERS[0], @number % 10)
-  end
-
-  def extract_letters(letters, index_of_extracted_letters)
-    index_of_extracted_letters -= 1
-    return '' if index_of_extracted_letters < 0
-    letters[index_of_extracted_letters].to_s
+  def letter_group_index(letter_group_number)
+    Math.log10(letter_group_number).to_i
   end
 end
