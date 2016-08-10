@@ -15,7 +15,7 @@ class LetterGroup
   end
 
   private
-  
+
   def letters_index
     @number / @letter_group_number % 10
   end

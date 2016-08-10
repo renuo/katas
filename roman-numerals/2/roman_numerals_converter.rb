@@ -1,3 +1,5 @@
+require_relative 'letter_group'
+
 class RomanNumeralsConverter
   def initialize(number)
     @number = number
