@@ -14,6 +14,8 @@ class LetterGroup
     LETTER_GROUPS[letter_group_index][letters_index]
   end
 
+  private
+  
   def letters_index
     @number / @letter_group_number % 10
   end
