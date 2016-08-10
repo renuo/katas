@@ -5,6 +5,8 @@ ruby File.read('.ruby-version').strip
 gem 'bundler'
 gem 'binding_of_caller'
 gem 'byebug'
+gem 'spring'
+gem 'spring-commands-rspec'
 gem 'pry-byebug'
 gem 'rspec'
 gem 'simplecov', require: false
