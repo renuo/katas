@@ -13,7 +13,7 @@ class RomanNumeralsConverter
   end
 
   private
-  
+
   def thousands
     NUMBERS_THOU[@number / 1000]
   end

@@ -3,8 +3,8 @@ class RomanNumeralsConverter
     1 => [''] + %w(I II III IV V VI VII VIII IX),
     10 => [''] + %w(X XX XXX XL L LX LXX LXXX XC),
     100 => [''] + %w(C CC CCC CD D DC DCC DCCC CM),
-    1000 => [''] + %w(M MM MMM),
-  }
+    1000 => [''] + %w(M MM MMM)
+  }.freeze
 
   def initialize(number)
     @number = number

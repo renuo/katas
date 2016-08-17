@@ -1,7 +1,7 @@
 require_relative '../roman_numerals_converter'
 
 describe RomanNumeralsConverter do
-  def self.check_indices(from, method, offsets=[0])
+  def self.check_indices(from, method, offsets)
     offsets.each do |offset|
       (0..9).each do |factor|
         from_with_factor_and_offset = from * factor + offset
