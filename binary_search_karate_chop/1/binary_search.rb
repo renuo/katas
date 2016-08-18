@@ -8,6 +8,7 @@ class BinarySearch
     @ordered_ints = ordered_ints
   end
 
+  # rubocop:disable Metrics/MethodLength
   def chop
     return -1 if @ordered_ints.empty?
 
