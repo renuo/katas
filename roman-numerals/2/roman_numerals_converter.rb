@@ -1,5 +1,6 @@
 require_relative 'letter_group'
 
+module V2
 class RomanNumeralsConverter
   def initialize(number)
     @number = number
@@ -14,4 +15,5 @@ class RomanNumeralsConverter
   def letters_for(letter_group_number)
     LetterGroup.new(@number, letter_group_number).letters
   end
+end
 end

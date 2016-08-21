@@ -1,12 +1,12 @@
 require_relative '../roman_numerals_converter'
 
-describe RomanNumeralsConverter do
+describe V5::RomanNumeralsConverter do
   def self.check_indices(from, method, offsets)
     offsets.each do |offset|
       (0..9).each do |factor|
         from_with_factor_and_offset = from * factor + offset
         it "#{method}_index with #{from_with_factor_and_offset} to #{factor}" do
-          converter = RomanNumeralsConverter.new(from_with_factor_and_offset)
+          converter = V5::RomanNumeralsConverter.new(from_with_factor_and_offset)
           expect(converter.send("#{method}_index")).to eq(factor)
         end
       end
@@ -17,7 +17,7 @@ describe RomanNumeralsConverter do
     expression.split(' ').map do |sub_expression|
       number, letter = sub_expression.split('=')
       it "converts #{number} to #{letter}" do
-        converter = RomanNumeralsConverter.new(number.to_i)
+        converter = V5::RomanNumeralsConverter.new(number.to_i)
         expect(converter.to_roman).to eq(letter)
       end
     end
@@ -42,7 +42,7 @@ describe RomanNumeralsConverter do
 
   describe 'check combination' do
     it 'concats the numbers correctly' do
-      converter = RomanNumeralsConverter.new(-1)
+      converter = V5::RomanNumeralsConverter.new(-1)
       expect(converter).to receive(:thousands).and_return('1000-')
       expect(converter).to receive(:hundreds).and_return('100-')
       expect(converter).to receive(:tens).and_return('10-')

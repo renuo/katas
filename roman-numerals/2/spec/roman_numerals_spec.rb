@@ -1,9 +1,9 @@
 require_relative '../roman_numerals_converter'
 
-describe RomanNumeralsConverter do
+describe V2::RomanNumeralsConverter do
   def self.check(number, letter)
     it "converts #{number} to #{letter}" do
-      converter = RomanNumeralsConverter.new(number)
+      converter = V2::RomanNumeralsConverter.new(number)
       expect(converter.to_roman).to eq(letter)
     end
   end

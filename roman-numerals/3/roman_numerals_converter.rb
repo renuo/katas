@@ -1,5 +1,5 @@
 require_relative 'digit_to_roman_converter'
-
+module V3
 class RomanNumeralsConverter
   def initialize(number)
     @number = number
@@ -18,4 +18,5 @@ class RomanNumeralsConverter
   def convert_digit_to_roman(divisor, numbers)
     numbers[@number / divisor]
   end
+end
 end

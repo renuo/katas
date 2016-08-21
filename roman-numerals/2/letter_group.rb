@@ -1,3 +1,4 @@
+module V2
 class LetterGroup
   LETTER_GROUPS = [
     [''] + %w(I II III IV V VI VII VIII IX),
@@ -24,4 +25,5 @@ class LetterGroup
   def letter_group_index
     Math.log10(@letter_group_number).to_i
   end
+end
 end

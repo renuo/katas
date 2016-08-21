@@ -1,3 +1,4 @@
+module V1
 class NumberLetterPair
   attr_reader :number, :letter
 
@@ -9,4 +10,5 @@ class NumberLetterPair
   def to_s
     "#{number}=#{letter}"
   end
+end
 end

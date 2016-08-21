@@ -1,3 +1,4 @@
+module V5
 class RomanNumeralsConverter
   NUMBERS = {
     1 => [''] + %w(I II III IV V VI VII VIII IX),
@@ -45,4 +46,5 @@ class RomanNumeralsConverter
   def thousands_index
     @number / 1000
   end
+end
 end

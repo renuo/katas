@@ -1,5 +1,6 @@
 require_relative 'number_letter_pair'
 
+module V1
 class RomanNumeralsConverter
   NUMBERS = [
     NumberLetterPair.new(1000, 'M'),
@@ -54,4 +55,5 @@ class RomanNumeralsConverter
     @buffer += "#{after_next_pair.letter}#{pair.letter}"
     @number -= (pair.number - after_next_pair.number)
   end
+end
 end

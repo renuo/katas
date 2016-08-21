@@ -1,3 +1,4 @@
+module V3
 class DigitToRomanConverter
   NUMBERS = [
     [''] + %w(I II III IV V VI VII VIII IX),
@@ -15,4 +16,5 @@ class DigitToRomanConverter
   def convert_digit_to_roman
     @roman_numbers[@cut_number / @divisor]
   end
+end
 end

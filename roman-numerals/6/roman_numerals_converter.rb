@@ -1,3 +1,4 @@
+module V6
 class RomanNumeralsConverter
   NUMBERS = {
     1 => [''] + %w(I II III IV V VI VII VIII IX),
@@ -17,4 +18,5 @@ class RomanNumeralsConverter
   def roman_for(digit)
     NUMBERS[digit][@number / digit % 10]
   end
+end
 end

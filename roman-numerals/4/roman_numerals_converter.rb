@@ -1,3 +1,4 @@
+module V4
 class RomanNumeralsConverter
   NUMBERS_ONES = [''] + %w(I II III IV V VI VII VIII IX)
   NUMBERS_TENS = [''] + %w(X XX XXX XL L LX LXX LXXX XC)
@@ -29,4 +30,5 @@ class RomanNumeralsConverter
   def ones
     NUMBERS_ONES[@number % 10]
   end
+end
 end

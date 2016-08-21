@@ -1,11 +1,11 @@
 require_relative '../roman_numerals_converter'
 
-describe RomanNumeralsConverter do
+describe V4::RomanNumeralsConverter do
   def self.check(expression)
     expression.split(' ').map do |sub_expression|
       number, letter = sub_expression.split('=')
       it "converts #{number} to #{letter}" do
-        converter = RomanNumeralsConverter.new(number.to_i)
+        converter = V4::RomanNumeralsConverter.new(number.to_i)
         expect(converter.to_roman).to eq(letter)
       end
     end
