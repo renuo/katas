@@ -15,13 +15,22 @@ module V6
 
     def chop
       while @values.length > 0
-        middle_element = @values.middle_element
-        return @values.original_middle_index if middle_element == @target
+        return @values.original_middle_index if element_found?
 
-        middle_element < @target ? @values.remove_left_half : @values.remove_right_half
+        remove_left_half? ? @values.remove_left_half : @values.remove_right_half
       end
 
       NOT_FOUND
+    end
+
+
+    private
+    def element_found?
+      @values.middle_element == @target
+    end
+
+    def remove_left_half?
+      @values.middle_element < @target
     end
   end
 end
