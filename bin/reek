@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+source ~/.zshrc
+
+bundle exec reek
+if [ ! $? -eq 0 ]; then
+  echo 'reek detected code smells, commit aborted'
+  exit 1
+fi
+

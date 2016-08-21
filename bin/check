@@ -1,0 +1,41 @@
+#!/bin/zsh
+
+source ~/.zshrc
+
+grep -i -r '  puts ' binary_search_karate_chop roman-numerals spec
+if [ $? -eq 0 ]; then
+  echo 'puts found. Please fix them and try again, commit aborted'
+  exit 1
+fi
+
+grep -i -r '  puts(' binary_search_karate_chop roman-numerals spec
+if [ $? -eq 0 ]; then
+  echo 'puts found. Please fix them and try again, commit aborted'
+  exit 1
+fi
+
+grep -i -r '(  pp? [^=])|(= pp? )' binary_search_karate_chop roman-numerals spec
+if [ $? -eq 0 ]; then
+  echo 'p found. Please fix them and try again, commit aborted'
+  exit 1
+fi
+
+grep -i -r '  p(' binary_search_karate_chop roman-numerals spec
+if [ $? -eq 0 ]; then
+  echo 'p found. Please fix them and try again, commit aborted'
+  exit 1
+fi
+
+bundle exec rubocop -D -c .rubocop.yml --fail-fast
+if [ ! $? -eq 0 ]; then
+  echo 'rubocop detected issues!'
+  bundle exec rubocop -a -D -c .rubocop.yml
+  echo 'Tried to auto correct the issues, but must be reviewed manually, commit aborted'
+  exit 1
+fi
+
+bundle exec rspec .
+if [ ! $? -eq 0 ]; then
+  echo 'rspec did not run successfully, commit aborted'
+  exit 1
+fi
