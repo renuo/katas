@@ -15,3 +15,4 @@
 /app/assets/javascripts/**/*.js.map
 /app/assets/javascripts/**/*.js
 .tsdrc
+examples.txt
