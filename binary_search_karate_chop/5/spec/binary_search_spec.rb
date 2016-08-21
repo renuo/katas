@@ -1,6 +1,6 @@
 require_relative '../binary_search_recursive'
 
-describe BinarySearchRecursive do
+describe V5::BinarySearchRecursive do
   def self.should_not_find_target(target, ordered_ints)
     it "does not find #{target} in #{ordered_ints}" do
       expect(chop(target, ordered_ints)).to eq(-1)
@@ -22,7 +22,7 @@ describe BinarySearchRecursive do
   end
 
   def chop(target, ordered_ints)
-    BinarySearchRecursive.chop(target, ordered_ints)
+    V5::BinarySearchRecursive.chop(target, ordered_ints)
   end
 
   describe 'element is not in the array' do

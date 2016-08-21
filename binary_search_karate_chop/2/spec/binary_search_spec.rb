@@ -1,6 +1,6 @@
 require_relative '../binary_search'
 
-describe BinarySearch do
+describe V2::BinarySearch do
   def self.should_not_find_target(target, ordered_ints)
     it "does not find #{target} in #{ordered_ints}" do
       expect(chop(target, ordered_ints)).to eq(-1)
@@ -22,7 +22,7 @@ describe BinarySearch do
   end
 
   def chop(target, ordered_ints)
-    BinarySearch.chop(target, ordered_ints)
+    V2::BinarySearch.chop(target, ordered_ints)
   end
 
   describe 'element is not in the array' do
