@@ -23,8 +23,8 @@ module V6
       NOT_FOUND
     end
 
-
     private
+
     def element_found?
       @values.middle_element == @target
     end
