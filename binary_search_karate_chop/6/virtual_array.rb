@@ -17,7 +17,7 @@ module V6
     end
 
     private def raise_index_error(index)
-      raise IndexError.new("index #{index} outside of array bounds: 0...#{length}")
+      raise IndexError, "index #{index} outside of array bounds: 0...#{length}"
     end
 
     def remove_left_half
@@ -46,6 +46,10 @@ module V6
 
     def original_middle_index
       @left_offset + middle_index
+    end
+
+    def any?
+      length.positive?
     end
   end
 end

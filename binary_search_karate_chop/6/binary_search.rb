@@ -14,7 +14,7 @@ module V6
     end
 
     def chop
-      while @values.length > 0
+      while @values.any?
         return @values.original_middle_index if element_found?
 
         remove_left_half? ? @values.remove_left_half : @values.remove_right_half

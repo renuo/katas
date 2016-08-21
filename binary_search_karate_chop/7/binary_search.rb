@@ -13,9 +13,9 @@ module V7
     end
 
     def chop
-      while @values.length > 0
+      while @values.any?
         return middle_index + @left_offset if @values[middle_index] == @target
-        
+
         @values[middle_index] < @target ? remove_left_half : remove_right_half
       end
 
