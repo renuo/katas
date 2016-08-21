@@ -1,6 +1,6 @@
-require_relative '../binary_search_recursive'
+require_relative '../binary_search'
 
-describe V4::BinarySearchRecursive do
+describe V4::BinarySearch do
   def self.should_not_find_target(target, ordered_ints)
     it "does not find #{target} in #{ordered_ints}" do
       expect(chop(target, ordered_ints)).to eq(-1)
@@ -22,7 +22,7 @@ describe V4::BinarySearchRecursive do
   end
 
   def chop(target, ordered_ints)
-    V4::BinarySearchRecursive.chop(target, ordered_ints)
+    V4::BinarySearch.chop(target, ordered_ints)
   end
 
   describe 'element is not in the array' do

@@ -1,9 +1,9 @@
 module V5
-  class BinarySearchRecursive
+  class BinarySearch
     NOT_FOUND = -1
 
     def self.chop(target, ordered_ints)
-      binary_search = BinarySearchRecursive.new(target, ordered_ints)
+      binary_search = BinarySearch.new(target, ordered_ints)
       binary_search.chop_recursive(0, ordered_ints.size - 1)
     end
 

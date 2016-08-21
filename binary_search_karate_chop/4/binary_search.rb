@@ -1,5 +1,5 @@
-module V3
-  class BinarySearchRecursive
+module V4
+  class BinarySearch
     NOT_FOUND = -1
 
     def self.chop(target, ordered_ints)
@@ -14,8 +14,10 @@ module V3
       return middle if ordered_ints[middle] == target
       return NOT_FOUND if min_index == max_index
 
-      return chop_recursive(target, ordered_ints, middle + 1, max_index) if ordered_ints[middle] < target
-      chop_recursive(target, ordered_ints, min_index, middle)
+      min_index = middle + 1 if ordered_ints[middle] < target
+      max_index = middle if ordered_ints[middle] > target
+
+      chop_recursive(target, ordered_ints, min_index, max_index)
     end
   end
 end
