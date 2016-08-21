@@ -3,7 +3,12 @@ IrresponsibleModule:
   enabled: false
 Attribute:
   enabled: false
+UncommunicativeModuleName:
+  enabled: false
 "app/helpers":
+  UtilityFunction:
+    enabled: false
+"spec":
   UtilityFunction:
     enabled: false
 
