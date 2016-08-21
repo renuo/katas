@@ -1,6 +1,6 @@
 require_relative '../roman_numerals_converter'
 
-describe V5::RomanNumeralsConverter do
+RSpec.describe V5::RomanNumeralsConverter do
   def self.check_indices(from, method, offsets)
     offsets.each do |offset|
       (0..9).each do |factor|

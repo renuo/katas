@@ -1,6 +1,6 @@
 require_relative '../roman_numerals_converter'
 
-describe V3::RomanNumeralsConverter do
+RSpec.describe V3::RomanNumeralsConverter do
   def self.check(number, letter)
     it "converts #{number} to #{letter}" do
       converter = V3::RomanNumeralsConverter.new(number)

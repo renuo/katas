@@ -1,6 +1,6 @@
 require_relative '../virtual_array'
 
-describe V6::VirtualArray do
+RSpec.describe V6::VirtualArray do
   describe 'the empty array' do
     subject { V6::VirtualArray.new([]) }
 

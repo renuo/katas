@@ -1,6 +1,6 @@
 require_relative '../roman_numerals_converter'
 
-describe V4::RomanNumeralsConverter do
+RSpec.describe V4::RomanNumeralsConverter do
   def self.check(expression)
     expression.split(' ').map do |sub_expression|
       number, letter = sub_expression.split('=')

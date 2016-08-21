@@ -1,6 +1,6 @@
 require_relative '../binary_search'
 
-describe V5::BinarySearch do
+RSpec.describe V5::BinarySearch do
   def self.should_not_find_target(target, ordered_ints)
     it "does not find #{target} in #{ordered_ints}" do
       expect(chop(target, ordered_ints)).to eq(-1)
