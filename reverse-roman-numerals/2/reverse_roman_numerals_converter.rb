@@ -33,7 +33,7 @@ module V2
     end
 
     ROMAN_TO_ARABIC_MAPPING = { 'I' => 1, 'V' => 5, 'X' => 10,
-                                'L' => 50, 'C' => 100, 'D' => 500, 'M' => 1000 }
+                                'L' => 50, 'C' => 100, 'D' => 500, 'M' => 1000 }.freeze
 
     def roman_to_arabic(roman_number, letter)
       ROMAN_TO_ARABIC_MAPPING[letter] * roman_number.count(letter)
